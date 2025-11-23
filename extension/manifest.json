@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Replay.ai",
+  "version": "1.0.0",
+  "description": "Record user interactions and DOM changes on webpages",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Replay.ai"
+  },
+  "commands": {
+    "print-events": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P",
+        "mac": "Command+Shift+P"
+      },
+      "description": "Print all recorded events"
+    }
+  }
+}
+

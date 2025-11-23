@@ -1,0 +1,50 @@
+#screen-recorder-btn {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 2147483647 !important; /* Maximum z-index value */
+  background-color: #ff4444 !important;
+  color: white !important;
+  padding: 12px 24px !important;
+  border-radius: 25px !important;
+  cursor: pointer !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  user-select: none !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 100px !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#screen-recorder-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+#screen-recorder-btn.recording {
+  background-color: #44ff44 !important;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+#screen-recorder-btn:active {
+  transform: scale(0.95);
+}
